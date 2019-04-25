@@ -9,7 +9,8 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-call plug#begin('~/Appdata/Local/nvim/plugs')
+let s:this_dir = expand('<sfile>:p:h')
+call plug#begin(s:this_dir.'/plugged')
 "Plug 'corbob/coc-pses', {'branch': 'getPsesByVersion', 'do': { -> coc#powershell#install(
 "    \ {
 "    \ 'flags': '-AllowPreRelease'
