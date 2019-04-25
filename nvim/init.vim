@@ -22,6 +22,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'scrooloose/nerdtree'
 Plug 'aaronbieber/vim-quicktask'
 Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 set hidden
