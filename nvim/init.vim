@@ -2,19 +2,28 @@ set nocompatible
 syntax enable
 filetype plugin on
 
-let mapleader = '`'
+let mapleader = ' '
 nnoremap <leader>ev :edit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>sf :source %<CR>
+
+" Block mode by default...
+nnoremap    v   <C-V>
+nnoremap <C-V>     v
+vnoremap    v   <C-V>
+vnoremap <C-V>     v
+" Use semicolon instead of colon for commands...
+nnoremap  ;  :
+
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 let s:this_dir = expand('<sfile>:p:h')
 call plug#begin(s:this_dir.'/plugged')
-"Plug 'corbob/coc-pses', {'branch': 'getPsesByVersion', 'do': { -> coc#powershell#install(
-"    \ {
-"    \ 'flags': '-AllowPreRelease'
-"    \}
+" Plug 'tylerleonhardt/coc-powershell', {'branch': 'switch-powershell-exe', 'do': { -> coc#powershell#install(
 "    \ )} }
 Plug 'C:\Users\corbob\Repos\coc\coc-pses', {'do': { -> coc#powershell#install()} }
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
@@ -23,6 +32,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'scrooloose/nerdtree'
 Plug 'aaronbieber/vim-quicktask'
 Plug 'vim-airline/vim-airline'
+Plug 'OmniSharp/omnisharp-vim'
 Plug 'tpope/vim-fugitive'
 call plug#end()
 
